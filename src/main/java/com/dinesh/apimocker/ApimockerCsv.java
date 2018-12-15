@@ -1,5 +1,6 @@
 package com.dinesh.apimocker;
 
+import com.dinesh.apimocker.extensions.P2CdynamicTxnId;
 import com.github.tomakehurst.wiremock.WireMockServer;
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
 
@@ -12,6 +13,7 @@ public class ApimockerCsv
         WireMockServer wireMockServer = new WireMockServer(
                 options().port(8089)
                 .usingFilesUnderDirectory("C:\\Dinesh\\apimocker-config\\")
+                .extensions(P2CdynamicTxnId.class)
         );
         wireMockServer.start();
         //wireMockServer.stop();
