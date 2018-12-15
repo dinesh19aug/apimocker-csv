@@ -18,7 +18,7 @@
         <groupId>org.apache.wink</groupId>
         <artifactId>wink-json4j-provider</artifactId>
         <version>1.4</version>
-    </dependency>
+    </dependency>   
 <!-- -->
 </dependencies>
 </project>
