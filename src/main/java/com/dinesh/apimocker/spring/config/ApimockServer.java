@@ -24,7 +24,7 @@ public class ApimockServer
         @SuppressWarnings("unchecked")
         WireMockServer wireMockServer = new WireMockServer(
                 options().port(Integer.parseInt(constants.PORT_NUMBER))
-                         .usingFilesUnderDirectory("C:\\Dinesh\\apimocker-config\\")
+                         .usingFilesUnderDirectory(constants.MAPPING_DIRECTORY)
                          .extensions(
                                  P2CdynamicTxnId.class) // Extension to dynamically generate txn id that is alphanumeric and 18 char long
                          .extensions(new ResponseTemplateTransformer(false))//Used to turn on templating functions
@@ -32,7 +32,6 @@ public class ApimockServer
         );
         wireMockServer.start();
         //wireMockServer.stop();
-        //TODO Move the config settings to properties file
-        //TODO Move the start server start in another file
+        
     }
 }
