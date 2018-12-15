@@ -19,6 +19,6 @@
         <artifactId>wink-json4j-provider</artifactId>
         <version>1.4</version>
     </dependency>   
-<!-- -->
+
 </dependencies>
 </project>
