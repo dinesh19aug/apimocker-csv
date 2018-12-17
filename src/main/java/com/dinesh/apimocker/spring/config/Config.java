@@ -1,12 +1,8 @@
 package com.dinesh.apimocker.spring.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.core.env.Environment;
+import com.dinesh.apimocker.extensions.CSVExtension;
+import com.dinesh.apimocker.extensions.service.CsvExtensionService;
+import org.springframework.context.annotation.*;
 
 @Configuration
 @PropertySource (value="classpath:apimocker.properties")
@@ -15,6 +11,18 @@ public class Config
 {
     public Config(){
         System.out.println("Config class called....");
+    }
+
+    @Bean
+    @Scope(value = "prototype")
+    public CsvExtensionService getCsvExtensionService(){
+        return new CsvExtensionService();
+    }
+
+    @Bean
+    @Scope(value = "prototype")
+    public CSVExtension getCsvExtension(){
+        return new CSVExtension(getCsvExtensionService());
     }
 
 
