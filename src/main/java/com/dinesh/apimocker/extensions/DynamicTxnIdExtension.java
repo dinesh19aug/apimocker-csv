@@ -14,11 +14,11 @@ import org.slf4j.LoggerFactory;
 /**
  * This extension creates a random transactionId String that is alphanumeric and 18 char long
  */
-public class P2CdynamicTxnId
+public class DynamicTxnIdExtension
         extends ResponseTransformer
 {
 
-    private static Logger LOG = LoggerFactory.getLogger(P2CdynamicTxnId.class);
+    private static Logger LOG = LoggerFactory.getLogger(DynamicTxnIdExtension.class);
 
     @Override
     public Response transform(Request request,
